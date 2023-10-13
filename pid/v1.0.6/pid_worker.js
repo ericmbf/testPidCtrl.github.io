@@ -253,8 +253,8 @@ const PidWorker = {
 		ts.set_at(0, 0, new Arma.cx_double(ts_real, 0.0));
 		// define PID limits
 		var limits = Arma.CxMat.zeros(4, 1);
-		limits.set_at(0, 0, new Arma.cx_double(-Infinity, 0.0));
-		limits.set_at(1, 0, new Arma.cx_double(+Infinity, 0.0));
+		limits.set_at(0, 0, new Arma.cx_double(0, 0.0));
+		limits.set_at(1, 0, new Arma.cx_double(100, 0.0));
 		// get simulation time
 		var theta = Arma.CxMat.zeros(1, 1);
 		pid.get_theta(data.selected_model.type , cxmatFromRealArray(data.selected_model.params), theta);
